@@ -1,7 +1,7 @@
 import unittest
-from CosmosDB.database_dao import DatabaseDAO
-from CosmosDB import test_items
-from CosmosDB.image_tool import image_decoder, store_single_disk
+from BuyService.CosmosDB.database_dao import DatabaseDAO
+from BuyService.CosmosDB import test_items
+from BuyService.CosmosDB.image_tool import image_decoder, store_single_disk
 
 endpoint = ""
 key = ''
