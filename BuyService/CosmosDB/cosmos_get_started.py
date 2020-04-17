@@ -1,5 +1,5 @@
 from azure.cosmos import exceptions, CosmosClient, PartitionKey
-from CosmosDB import test_items
+from BuyService.CosmosDB import test_items
 
 # https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-python
 # Initialize the Cosmos client
