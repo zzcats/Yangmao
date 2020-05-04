@@ -1,7 +1,7 @@
 import uuid
 
 
-from BuyService.CosmosDB.image_tool import read_single_disk, image_encoder
+from CosmosDB.image_tool import read_single_disk, image_encoder
 
 
 def get_item_1():

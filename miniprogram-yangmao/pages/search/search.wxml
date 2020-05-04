@@ -1,14 +1,14 @@
 <!--pages/search/search.wxml-->
 <text>pages/search/search.wxml</text>
 <view class="search-container">
-  <input type="text" placeholder="输入商品搜索"></input><icon type="search" size="20"/>
+  <input type="text" placeholder="输入商品名搜索"></input><icon type="search" size="20"/>
 </view>
 
 <scroll-view scroll-y="true" style="width:100%;position:relative;top:40px;height:200px">
 
     
     <view class="header">
-      <text>图书 10本图书</text>
+      <text>优惠商品</text>
     </view>
 
     <view class="common-list">
@@ -19,7 +19,7 @@
           <image bindtap="bindDetailViewTap" class="cover-img" src="https://img3.doubanio.com/mpic/s1001902.jpg"></image>
         </view>
         <view class="content">
-          <view class="title">图书标图</view>
+          <view class="title">商品标图</view>
           <text class="desc">9.0/oopsguy/2016-07-08</text>
         </view>
       </view>

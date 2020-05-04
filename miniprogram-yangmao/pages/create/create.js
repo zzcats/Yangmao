@@ -23,6 +23,7 @@ Page({
       filePath: that.data.tempFilePath,
       name: 'uploadfile_ant',
       formData: {
+        method: 'POST',
         'imgIndex': that.data.name
       },
       header: {
