@@ -38,15 +38,5 @@ def create_item():
 
 @app.route('/list', methods=['POST'], strict_slashes=False)
 def list_item():
-    picture = request.files['uploadfile_ant']
-    print(picture)
-    picture_path = r'c:\workspace\picture_'+picture.filename
-    picture.save(picture_path)
-    name = request.form['itemName']
-    detail = request.form['itemDetail']
-    item_category = request.form['itemCategory']
-    item_price = request.form['itemPrice']
-    item = get_item(name, detail, picture_path, item_price, item_category)
-    print(item)
-    db_instance.add_item(item)
-    return name
+    items = db_instance.list_item()
+    return items

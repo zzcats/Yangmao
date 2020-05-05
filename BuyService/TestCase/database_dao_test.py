@@ -10,6 +10,7 @@ database_name = 'yangmao'
 container_name = "product"
 instance=DatabaseDAO(endpoint,key,database_name,container_name);
 
+
 class MyTestCase(unittest.TestCase):
     def test_add(self):
         item= test_items.get_item_1()
