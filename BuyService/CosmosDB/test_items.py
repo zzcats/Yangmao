@@ -8,7 +8,7 @@ def get_item_1():
     item_1 = {
         'id': '1_' + str(uuid.uuid4()),
         'category': 'A',
-        'name': 'Andersen',
+        'name': '锅锅的锅',
         'url': 'http:/123',
         'link': 'http:/456',
         'description': 'WA5',

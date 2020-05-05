@@ -14,7 +14,7 @@ class DatabaseDAO:
         )
 
     def select_by_name(self, name):
-        query="SELECT * FROM c where c.name CONTAINS('" + name+"')"
+        query="SELECT * FROM c where CONTAINS(c.name, '" + name+"')"
         return self.select_items(query)
 
     def add_item(self, item_content):
