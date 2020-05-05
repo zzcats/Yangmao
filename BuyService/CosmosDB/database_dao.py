@@ -14,7 +14,7 @@ class DatabaseDAO:
         )
 
     def select_by_name(self, name):
-        query="SELECT * FROM c where CONTAINS(c.name, '" + name+"')"
+        query="SELECT * FROM c where CONTAINS(c.name, '" + name+"' ORDER BY c._ts DESC)"
         return self.select_items(query)
 
     def add_item(self, item_content):
@@ -34,6 +34,10 @@ class DatabaseDAO:
 
     def update_item(self, item):
         self.container.upsert_item(item)
+
+    def list_item(self):
+        query="SELECT * FROM c ORDER BY c._ts DESC"
+        return self.select_items(query)
 
 
 def getDBClient():

@@ -2,9 +2,10 @@ import unittest
 from CosmosDB.database_dao import DatabaseDAO
 from CosmosDB import test_items
 from CosmosDB.image_tool import image_decoder, store_single_disk
+from constants.key_constants import KeyConstants
 
-endpoint = ""
-key = ''
+endpoint = KeyConstants.db_endpoint
+key = KeyConstants.db_key
 database_name = 'yangmao'
 container_name = "product"
 instance=DatabaseDAO(endpoint,key,database_name,container_name);
@@ -23,6 +24,10 @@ class MyTestCase(unittest.TestCase):
 
     def test_query(self):
         item = instance.select_by_name('锅');
+        self.assertEqual(True, True)
+
+    def test_list(self):
+        item = instance.list_item();
         self.assertEqual(True, True)
 
 

@@ -3,6 +3,8 @@ import uuid
 
 from CosmosDB.image_tool import read_single_disk, image_encoder
 
+from datetime import datetime
+
 
 def get_item_1():
     item_1 = {
@@ -14,7 +16,7 @@ def get_item_1():
         'description': 'WA5',
         'picture': image_encoder(read_single_disk('C:\\Users\\zcheh\\Pictures\\Capture.PNG')),
         'price': '15',
-        'datetime': '2010-04-04'
+        'datetime': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
    }
     return item_1
 
