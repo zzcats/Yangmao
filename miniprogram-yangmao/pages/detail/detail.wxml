@@ -5,7 +5,7 @@
 
     <view class="book-meta">
         <view class="meta-info">
-            <text class="book-title">图书标题</text>
+            <text class="book-title">{{itemName}}</text>
             <text class="other-meta">{{author}}</text>
             <text class="other-meta">出版社：xxx出版社</text>
             <text class="other-meta">出版日期：2010-05-07</text>

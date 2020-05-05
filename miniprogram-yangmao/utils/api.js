@@ -7,7 +7,7 @@ function request(url, data) {
   return new Promise(function (resolve, reject) {
     wx.request({
       url: url,
-      method: 'GET',
+      method: 'POST',
       data: data,
       header: {
         'content-type': 'text/html'
@@ -33,6 +33,14 @@ function requestSearchItem(data) {
   return request(API_BASE, data);
 }
 
+/**
+ * 搜索商品
+ */
+function requestItems(data) {
+  return request(API_BASE+'/list', data);
+}
+
 module.exports = {
-  requestSearchItem: requestSearchItem
+  requestSearchItem: requestSearchItem,
+  requestItems: requestItems
 }

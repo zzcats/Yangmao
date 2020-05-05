@@ -7,7 +7,13 @@ Page({
    * Page initial data
    */
   data: {
-    author: "hello"
+    author: "hello",
+    itemName: '',
+    itemDetail:'',
+    itemCategory:'',
+    itemPrice:'',
+    itemLink:'',
+    itemImageUrl:''
   },
 
   /**

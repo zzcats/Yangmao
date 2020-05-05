@@ -14,7 +14,7 @@ def get_item_1():
         'url': 'http:/123',
         'link': 'http:/456',
         'description': 'WA5',
-        'picture': image_encoder(read_single_disk('C:\\Users\\zcheh\\Pictures\\Capture.PNG')),
+        'picture': '',
         'price': '15',
         'datetime': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
    }

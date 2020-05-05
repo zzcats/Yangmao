@@ -1,3 +1,5 @@
+const api = require('../../utils/api.js');
+
 // pages/search/search.js
 Page({
 
@@ -5,7 +7,7 @@ Page({
    * Page initial data
    */
   data: {
-
+    items:''
   },
 
   bindDetailViewTap: function() {
@@ -18,7 +20,10 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    wx.showLoading({
+      title: '加载中',
+    });
+    requestData.call(this);
   },
 
   /**
@@ -70,3 +75,16 @@ Page({
 
   }
 })
+
+function requestData() {
+  api.requestItems({
+  }).then((data) => {
+    wx.hideLoading();
+    this.setData({items:data})
+  }).catch(_ => {
+    this.setData({
+      author:"error"
+    });
+    wx.hideLoading();
+  });
+}
