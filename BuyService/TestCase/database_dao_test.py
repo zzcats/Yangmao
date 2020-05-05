@@ -27,7 +27,9 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(True, True)
 
     def test_list(self):
-        item = instance.list_item();
+        page_number = 2
+        page_count = 2
+        item = instance.list_item(page_number,page_count);
         self.assertEqual(True, True)
 
 
