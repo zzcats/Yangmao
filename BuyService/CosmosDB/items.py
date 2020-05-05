@@ -1,5 +1,5 @@
 import uuid
-import datetime
+import datetime,json
 
 
 from CosmosDB.image_tool import read_single_disk, image_encoder
@@ -10,11 +10,11 @@ def get_item(name,detail,picture_path,price,category):
         'id': '1_' + str(uuid.uuid4()),
         'category': category,
         'name': name,
-        'url': 'http:/123',
+        'url': '',
         'link': 'http:/456',
         'description': detail,
         'picture': image_encoder(read_single_disk(picture_path)),
         'price': price,
-        'datetime': datetime.datetime.now()
+        'datetime': str(datetime.datetime.now())
     }
     return item
