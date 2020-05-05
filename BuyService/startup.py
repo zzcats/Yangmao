@@ -29,7 +29,8 @@ def create_item():
     detail = request.form['itemDetail']
     item_category = request.form['itemCategory']
     item_price = request.form['itemPrice']
-    item = get_item(name, detail, blob_picture_path, item_price, item_category)
+    item_link = request.form['itemLink']
+    item = get_item(name, detail, blob_picture_path, item_price, item_category, item_link)
     print(item)
     db_instance.add_item(item)
     return name

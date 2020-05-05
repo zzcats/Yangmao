@@ -9,7 +9,8 @@ Page({
     itemName: '',
     itemDetail:'',
     itemCategory:'',
-    itemPrice:''
+    itemPrice:'',
+    itemLink:''
   },
   submit: function(){
     var that = this;
@@ -29,7 +30,8 @@ Page({
         'itemName': that.data.itemName,
         'itemDetail': that.data.itemDetail,
         'itemCategory':that.data.itemCategory,
-        'itemPrice':that.data.itemPrice
+        'itemPrice':that.data.itemPrice,
+        'itemLink':that.data.itemLink
       },
       header: {
         "Content-Type": "multipart/form-data"
@@ -97,6 +99,11 @@ Page({
   bindItemCategory:function(e){
     this.setData({
       itemCategory:e.detail.value
+    })
+  },
+  bindItemLink:function(e){
+    this.setData({
+      itemLink:e.detail.value
     })
   },
   /**
