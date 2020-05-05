@@ -3,13 +3,9 @@ from collections import namedtuple
 from flask import Flask, abort, request, jsonify
 from PIL import Image
 from CosmosDB.items import get_item
-from CosmosDB.database_dao import DatabaseDAO
+from CosmosDB.database_dao import getDBClient
 
-endpoint = "https://yangmao.documents.azure.com:443/"
-key = ''
-database_name = 'yangmao'
-container_name = "product"
-db_instance=DatabaseDAO(endpoint,key,database_name,container_name);
+db_instance = getDBClient()
 
 app = Flask(__name__)
 

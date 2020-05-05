@@ -8,10 +8,25 @@
     <view class="section">
       <textarea bindinput="bindItemDetail" auto-height placeholder="自动变高" />
     </view>
+
+    <view class="page-section">
     <view class="weui-cells__title">商品价格</view>
-    <input bindinput="bindItemPrice" type="digit" placeholder="商品价格"/>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input bindinput="bindItemPrice" type="digit" placeholder="商品价格"/>
+      </view>
+    </view>
+  </view>
+
+    <view class="page-section">
     <view class="weui-cells__title">商品类别</view>
-    <input bindinput="bindItemCategory" type="text" placeholder="可以不填"/>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input bindinput="bindItemCategory" type="text" placeholder="可以不填"/>
+      </view>
+    </view>
+  </view>
+    
   </view>
 
   <view class="weui-uploader">

@@ -30,3 +30,12 @@ class DatabaseDAO:
 
     def update_item(self, item):
         self.container.upsert_item(item)
+
+
+def getDBClient():
+    endpoint = "https://yangmao.documents.azure.com:443/"
+    key = ''
+    database_name = 'yangmao'
+    container_name = "product"
+    instance = DatabaseDAO(endpoint, key, database_name, container_name);
+    return instance
