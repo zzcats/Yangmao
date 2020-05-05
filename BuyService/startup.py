@@ -4,10 +4,10 @@ from flask import Flask, abort, request, jsonify
 from storage.storage_client import StorageClient
 from constants.key_constants import KeyConstants
 from CosmosDB.items import get_item
-from CosmosDB.database_dao import getDBClient
+from CosmosDB.database_dao import get_db_client
 import uuid
 
-db_instance = getDBClient()
+db_instance = get_db_client()
 storage_client = StorageClient(KeyConstants.storage_connect_string, KeyConstants.storage_container)
 app = Flask(__name__)
 

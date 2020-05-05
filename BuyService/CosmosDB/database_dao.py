@@ -1,4 +1,5 @@
 from azure.cosmos import exceptions, CosmosClient, PartitionKey
+from constants.key_constants import KeyConstants
 
 
 class DatabaseDAO:
@@ -40,10 +41,10 @@ class DatabaseDAO:
         return self.select_items(query)
 
 
-def getDBClient():
-    endpoint = "https://yangmao.documents.azure.com:443/"
-    key = ''
-    database_name = 'yangmao'
-    container_name = "product"
+def get_db_client():
+    endpoint = KeyConstants.db_endpoint
+    key = KeyConstants.db_key
+    database_name = KeyConstants.database_name
+    container_name = KeyConstants.db_container_name
     instance = DatabaseDAO(endpoint, key, database_name, container_name);
     return instance
