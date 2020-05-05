@@ -13,7 +13,7 @@ def get_item(name,detail,picture_path,price,category):
         'url': '',
         'link': 'http:/456',
         'description': detail,
-        'picture': image_encoder(read_single_disk(picture_path)),
+        'picture': picture_path,
         'price': price,
         'datetime': str(datetime.datetime.now())
     }
