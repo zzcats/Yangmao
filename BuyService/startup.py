@@ -23,8 +23,8 @@ def create_item():
     print(picture.filename)
     blob_picture_path = KeyConstants.storage_url + picture.filename
     local_picture_path = r'c:\workspace\picture_' + picture.filename
-    storage_client.upload_file(local_picture_path,blob_picture_path)
     picture.save(local_picture_path)
+    storage_client.upload_file(local_picture_path,picture.filename)
     name = request.form['itemName']
     detail = request.form['itemDetail']
     item_category = request.form['itemCategory']
