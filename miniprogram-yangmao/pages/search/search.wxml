@@ -16,7 +16,7 @@
     <view class="list-item">
       <view class="index-list-item">
         <view class="cover">
-          <image bindtap="bindDetailViewTap" class="cover-img" src="https://img3.doubanio.com/mpic/s1001902.jpg"></image>
+          <image bindtap="bindDetailViewTap" class="cover-img" src="https://yangmao.blob.core.windows.net/picture/u=186436404,2385199454&fm=26&gp=0.jpg"></image>
         </view>
         <view class="content">
           <view class="title">商品标图</view>
