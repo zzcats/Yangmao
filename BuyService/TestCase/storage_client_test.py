@@ -10,7 +10,7 @@ client = StorageClient(KeyConstants.storage_connect_string, container_name)
 
 class StorageTestCase(unittest.TestCase):
     def test_upload(self):
-        client.upload_file(r'C:\workspace\tmp.png')
+        client.upload_file(r'C:\workspace\tmp.png','tmp.png')
         self.assertEqual(True, True)
 
 
