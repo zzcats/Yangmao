@@ -13,11 +13,9 @@ class DatabaseDAO:
             offer_throughput=400
         )
 
-    def select_by_name(self,name):
-        return list(self.container.query_items(
-            query="SELECT * FROM c where c.name CONTAINS" + name,
-            enable_cross_partition_query=True
-        ))
+    def select_by_name(self, name):
+        query="SELECT * FROM c where c.name CONTAINS('" + name+"')"
+        return self.select_items(query)
 
     def add_item(self, item_content):
         self.container.create_item(body=item_content)
