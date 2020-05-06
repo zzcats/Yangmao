@@ -36,8 +36,11 @@ class DatabaseDAO:
     def update_item(self, item):
         self.container.upsert_item(item)
 
-    def list_item(self):
-        query="SELECT * FROM c ORDER BY c._ts DESC"
+    #https://docs.microsoft.com/en-us/azure/cosmos-db/sql-query-offset-limit
+    def list_item(self, page_number, page_count):
+        #'{0} {1} cost ${2}'.format(6, 'bananas', 1.74)
+        offset = (page_number - 1) * page_count
+        query = "SELECT * FROM c ORDER BY c._ts DESC OFFSET {0} LIMIT {1}".format(offset,page_count)
         return self.select_items(query)
 
 
