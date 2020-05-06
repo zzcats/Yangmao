@@ -1,14 +1,14 @@
 <view>
     <view class="cover-container">
-        <image bindtap="OnsearchClick" src="https://img3.doubanio.com/mpic/s1001902.jpg"></image>
+        <image bindtap="OnsearchClick" src="{{picture}}"></image>
     </view>
 
     <view class="book-meta">
         <view class="meta-info">
-            <text class="book-title">{{itemName}}</text>
-            <text class="other-meta">{{author}}</text>
-            <text class="other-meta">出版社：xxx出版社</text>
-            <text class="other-meta">出版日期：2010-05-07</text>
+            <text class="book-title">{{name}}</text>
+            <text class="other-meta">{{datetime}}</text>
+            <text class="other-meta">{{link}}</text>
+            <text class="other-meta">{{price}}</text>
         </view>
         <view class="range">
             <text class="score">0</text>
@@ -19,14 +19,14 @@
     <view class="book-intro">
         <view class="intro-header"><text>简介</text></view>
         <text class="intro-content">
-            这是图书简介
+            {{detail}}
         </text>
     </view>
 
     <view class="book-intro">
-        <view class="intro-header"><text>作者</text></view>
+        <view class="intro-header"><text>链接</text></view>
         <text class="intro-content">
-            这是作者简介
+            {{link}}
         </text>
     </view>
 </view>

@@ -11,21 +11,22 @@
       <text>优惠商品</text>
     </view>
 
-    <view class="common-list">
-
-    <view class="list-item">
+<block wx:for='{{items}}' wx:key='list' wx:for-item="item">
+  <view class="common-list">
+    <view bindtap="bindDetailViewTap" class="list-item" data-id="{{item}}">
       <view class="index-list-item">
         <view class="cover">
-          <image bindtap="bindDetailViewTap" class="cover-img" src="https://yangmao.blob.core.windows.net/picture/u=186436404,2385199454&fm=26&gp=0.jpg"></image>
+          <image class="cover-img" src='{{item.picture}}'></image>
         </view>
         <view class="content">
-          <view class="title">商品标图</view>
-          <text class="desc">9.0/oopsguy/2016-07-08</text>
+          <view class="title">{{item.name}}</view>
+          <text class="desc">{{item.description}}</text>
         </view>
       </view>
     </view>
-
     </view>
+  </block>
+    
 
     <view class="refresh-footer">
       <icon type="waiting" size="30" color="reed"  />

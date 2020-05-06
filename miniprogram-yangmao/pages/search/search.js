@@ -1,5 +1,3 @@
-const api = require('../../utils/api.js');
-
 // pages/search/search.js
 Page({
 
@@ -7,12 +5,19 @@ Page({
    * Page initial data
    */
   data: {
-    items:''
+    items:'',
+    currentItem:''
   },
 
-  bindDetailViewTap: function() {
+  bindDetailViewTap: function(e) {
+    var vaitem_data = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '../detail/detail'
+      url: '../detail/detail?name='+ vaitem_data.name
+      +'&price='+vaitem_data.price
+      +'&picture='+vaitem_data.picture
+      +'&detail='+vaitem_data.description
+      +'&link='+vaitem_data.link
+      +'&datetime='+vaitem_data.datetime,
     })
   },
 
@@ -20,10 +25,36 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    var that = this;
     wx.showLoading({
       title: '加载中',
     });
-    requestData.call(this);
+    wx.request({
+      url: 'https://www.iisheep.com/list',
+      method: 'GET',
+      header: {
+        'content-type': 'text/html'
+      },
+      success: function (res) {
+        wx.hideLoading();
+        that.setData({
+          items:res.data
+        })
+      },
+      fail: function (res) {
+        wx.hideLoading();
+        wx.showModal({
+          title: '加载失败',
+          content: '重新刷新',
+          showCancel: false,
+          success: function (res) { 
+            wx.navigateTo({
+              url: '../index/index'
+            })
+          }
+        })
+      }
+    });
   },
 
   /**
@@ -75,16 +106,3 @@ Page({
 
   }
 })
-
-function requestData() {
-  api.requestItems({
-  }).then((data) => {
-    wx.hideLoading();
-    this.setData({items:data})
-  }).catch(_ => {
-    this.setData({
-      author:"error"
-    });
-    wx.hideLoading();
-  });
-}

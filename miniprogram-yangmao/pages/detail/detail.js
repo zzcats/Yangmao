@@ -7,20 +7,26 @@ Page({
    * Page initial data
    */
   data: {
-    author: "hello",
-    itemName: '',
-    itemDetail:'',
-    itemCategory:'',
-    itemPrice:'',
-    itemLink:'',
-    itemImageUrl:''
+    price: '',
+    name:'',
+    picture:'',
+    detail:'',
+    datetime:'',
+    link:''
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    this.setData({
+      datetime:options.datetime,
+      detail:options.detail,
+      link:options.link,
+      picture:options.picture,
+      price:options.price,
+      name:options.name
+    })
   },
 
   /**
